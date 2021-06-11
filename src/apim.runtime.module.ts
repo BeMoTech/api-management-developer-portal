@@ -69,11 +69,13 @@ import { TagInput } from "./components/tag-input/tag-input";
 import { ViewStack } from "@paperbits/core/ko/ui/viewStack";
 import { OAuthService } from "./services/oauthService";
 import { DefaultSessionManager } from "./authentication/defaultSessionManager";
+import { CustomNavbarRuntimeModule } from "../community/widgets/navbar/custom-navbar.runtime.module";
 
 export class ApimRuntimeModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindModule(new KnockoutRegistrationLoaders());
-        injector.bindSingleton("eventManager", DefaultEventManager);
+        injector.bindModule(new CustomNavbarRuntimeModule());
+		injector.bindSingleton("eventManager", DefaultEventManager);
         injector.bindSingleton("logger", ConsoleLogger);
         injector.bindCollection("autostart");
         injector.bindToCollection("autostart", UnhandledErrorHandler);

@@ -32,6 +32,7 @@ import { BackendService } from "./services/backendService";
 import { StaticRoleService } from "./services/roleService";
 import { ProvisionService } from "./services/provisioningService";
 import { OAuthService } from "./services/oauthService";
+import { CustomNavbarPublishModule } from "../community/widgets/navbar/custom-navbar.publish.module";
 
 export class ApimPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
@@ -55,8 +56,9 @@ export class ApimPublishModule implements IInjectorModule {
         injector.bindModule(new ConfirmPasswordModule());
         injector.bindModule(new ChangePasswordModule());
         injector.bindModule(new ReportsModule());
-        injector.bindModule(new ValidationSummaryModule());        
-        injector.bindSingleton("tenantService", TenantService);        
+        injector.bindModule(new ValidationSummaryModule());
+        injector.bindModule(new CustomNavbarPublishModule());
+		injector.bindSingleton("tenantService", TenantService);
         injector.bindSingleton("backendService", BackendService);
         injector.bindSingleton("userService", StaticUserService);
         injector.bindSingleton("roleService", StaticRoleService);

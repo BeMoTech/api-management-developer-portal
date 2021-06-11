@@ -58,7 +58,7 @@ import { PolicyService } from "./services/policyService";
 import { OAuthService } from "./services/oauthService";
 import { HistoryRouteHandler } from "@paperbits/common/routing";
 import { OldContentRouteGuard } from "./routing/oldContentRouteGuard";
-
+import { CustomNavbarDesignModule } from "../community/widgets/navbar/custom-navbar.design.module";
 
 export class ApimDesignModule implements IInjectorModule {
     public register(injector: IInjector): void {
@@ -107,7 +107,8 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new ValidationSummaryDesignModule());
         injector.bindModule(new ValidationSummaryModule());
         injector.bindModule(new SigninSocialEditorModule());
-        injector.bindSingleton("app", App);
+		injector.bindModule(new CustomNavbarDesignModule());
+		injector.bindSingleton("app", App);
         injector.bindSingleton("logger", ConsoleLogger);
         injector.bindSingleton("tenantService", TenantService);
         injector.bindSingleton("backendService", BackendService);

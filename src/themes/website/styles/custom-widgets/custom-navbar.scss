@@ -1,0 +1,60 @@
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+
+.custom-navbar {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 72px;
+  width: 100%;
+}
+
+.navbar-infos {
+  margin-right: 4rem;
+
+  a {
+	// Be:Mo logo
+	img {
+	  width: 200px;
+	  height: 38px;
+	}
+  }
+
+  // Portal description
+  span {
+	font-family: 'Source Code Pro', monospace;
+	font-size: 16px;
+	color: #3B4874;
+	margin-left: 2rem;
+  }
+}
+
+.navbar-navigation {
+  nav {
+	a {
+	  font-family: 'Source Code Pro', monospace;
+	  color: #3B4874;
+	  margin-right: 2rem;
+	  margin-left: 2rem;
+	  font-size: 16px;
+	  text-transform: uppercase;
+
+	  :after {
+		display: none;
+	  }
+	}
+  }
+}
+
+.navbar-avatar-button {
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid darkgrey;
+  height: 38px;
+  width: 38px;
+}
