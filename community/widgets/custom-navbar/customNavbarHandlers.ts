@@ -1,5 +1,4 @@
-﻿import { widgetName, widgetDisplayName, widgetCategory } from "./constants";
-import { IWidgetOrder, IWidgetHandler } from "@paperbits/common/editing";
+﻿import { IWidgetOrder, IWidgetHandler } from "@paperbits/common/editing";
 import { CustomNavbarModel } from "./customNavbarModel";
 
 /**
@@ -13,10 +12,10 @@ export class CustomNavbarHandlers implements IWidgetHandler {
      */
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
-            name: widgetName,
-            category: widgetCategory,
-            requires: [],
-            displayName: widgetDisplayName,
+            name: "customNavbar",
+			displayName: "Be:Mo navbar",
+			category: "Be:Mo widgets",
+            requires: ["html", "js"],
             iconClass: "paperbits-puzzle-10",
 
             /**

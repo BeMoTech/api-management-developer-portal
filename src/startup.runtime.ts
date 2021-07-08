@@ -1,7 +1,6 @@
 import { InversifyInjector } from "@paperbits/common/injection";
 import { ApimRuntimeModule } from "./apim.runtime.module";
 
-
 const injector = new InversifyInjector();
 injector.bindModule(new ApimRuntimeModule());
 
